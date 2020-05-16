@@ -1,0 +1,194 @@
+
+.projects {
+    height: calc(100% - 60px);
+    padding-top: 30px;
+}
+.example {
+ background: #3880FA;
+    color: #fff;
+    padding: 20px;
+}
+
+.example h3 {
+    font-size: 18px;
+}
+
+.example p {
+    font-size: 14px;
+}
+
+.edit-nav .header {
+    padding: 15px 20px;
+}
+.edit-nav .header h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #979797;
+    margin: 0;
+}
+
+.edit-nav .header .close {
+    text-shadow: none;
+    color: #808080;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+}
+.edit-nav .inner-wrapper {
+    padding: 20px;
+}
+.edit-nav .inner-wrapper label {
+    margin: 0;
+    color: #fff;
+    text-transform:capitalize;
+    font-weight: 400;
+    font-size: 12px;
+}
+.edit-nav .inner-wrapper .sizes-input  {
+  background: #3B3B3B;
+    border-radius: 0;
+    height: 25px;
+    font-size: 10px;
+    border: none;
+    width: 50px;
+    padding: 5px;
+}
+/* General styles for all menus */
+.cbp-spmenu {
+    background: #2F2F2F;
+    position: fixed;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+.cbp-spmenu-vertical {
+    width: 300px;
+    height: calc(100% - 72px);
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    overflow-y: scroll;
+}
+
+
+.cbp-spmenu-horizontal {
+    width: 100%;
+    height: 150px;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+
+/* Vertical menu that slides from the left or right */
+.cbp-spmenu-left {
+    left: -240px;
+}
+
+/*.cbp-spmenu-right {*/
+/*    right: -240px;*/
+/*}*/
+
+.cbp-spmenu-left.menu-open {
+    left: 0px;
+}
+
+.cbp-spmenu-right.menu-open {
+    right: 0px;
+}
+
+/* Horizontal menu that slides from the top or bottom */
+
+.cbp-spmenu-top {
+    top: -150px;
+}
+
+.cbp-spmenu-bottom {
+    bottom: -150px;
+}
+
+.cbp-spmenu-top.menu-open {
+    top: 0px;
+}
+
+.cbp-spmenu-bottom.menu-open {
+    bottom: 0px;
+}
+
+/* Push classes applied to the body */
+.push-body {
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
+}
+
+.push-body-toright {
+    left: 240px;
+}
+
+.push-body-toleft {
+    left: -240px;
+}
+
+/* Transitions */
+.cbp-spmenu,
+.push-body {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/* Example media queries */
+@media screen and (max-width: 55.1875em) {
+    .cbp-spmenu-horizontal {
+        font-size: 75%;
+        height: 110px;
+    }
+
+    .cbp-spmenu-top {
+        top: -110px;
+    }
+
+    .cbp-spmenu-bottom {
+        bottom: -110px;
+    }
+}
+
+@media screen and (max-height: 26.375em) {
+    .cbp-spmenu-vertical {
+        font-size: 90%;
+        width: 190px;
+    }
+
+    .cbp-spmenu-left,
+    .push-body-toleft {
+        left: -190px;
+    }
+
+    /*.cbp-spmenu-right {*/
+    /*    right: -190px;*/
+    /*}*/
+
+    .push-body-toright {
+        left: 190px;
+    }
+}
+
+
+.projects .tab-pane {
+    padding-right: 18%;
+    height: auto;
+
+}
+
+.projects .tab-pane.active .tab-content, .projects .tab-pane.active {
+    height: 100% !important;
+}
+.fade:not(.show) {
+    display: none;
+}
+
+.projects .btn-wrapper {
+    right: 270px;
+    left: auto;
+    top: 15px;
+}

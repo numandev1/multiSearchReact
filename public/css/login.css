@@ -1,0 +1,31 @@
+.login-wrapper .logo {
+    width: 200px;
+    margin: 0 auto 50px auto;
+}
+
+.login-wrapper label {
+    font-weight: 700;
+}
+
+.login-wrapper .form-group {
+    margin-bottom: 30px;
+}
+
+.login-footer {
+    padding-top: 30px;
+}
+
+.login-footer .custom-control-label span {
+    color: #707070;
+    font-weight: 600;
+}
+
+.login-footer a {
+    color: #282828;
+    opacity: 0.2;
+    font-weight: 600;
+}
+
+.login-footer .custom-control-input:checked .custom-control-label span {
+    color: #282828;
+}

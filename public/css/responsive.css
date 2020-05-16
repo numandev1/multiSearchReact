@@ -1,0 +1,8 @@
+@media screen and (min-width: 1380px) {
+    .projects-wrapper .project-box {
+        height: 200px;
+    }
+    .projects-wrapper .project-box.new-project a {
+        font-size: 14px;
+    }
+}
