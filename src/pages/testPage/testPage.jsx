@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../images/logo.png';
-import '../App.css';
+import logo from './logo.png';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Route, IndexRoute } from 'react-router';
 import { BrowserRouter as Router, Switch, Link } from 'react-router-dom';
@@ -14,7 +13,7 @@ class InformesHeader extends Component {
     render() {
         return (
             <header style={Background} className="text-center py-2 m-0">
-                <img src={logo} className="img-fluid w-75"/>
+                <img src={logo} className="img-fluid w-75" style={{height:30,width:30}} />
             </header>
         )
     }
@@ -78,27 +77,43 @@ export class InformesBody extends Component {
         
     }
     
-    handleSearchFilter = (event) => {
-          const {inputValue, name} = event.target;
-          this.setState({ [name]: inputValue }, () => {
-              this.filterList();
-          }); 
-      };
+    
+  handleSearchFilter = (event, key) => {
+    const inputValue = event.target.value;
+    this.setState({ [key]: inputValue }, () => {
+      this.filterList();
+    });
+  };
 
     searchFilter = () => {
         return <form>
-                  <input name="filterTitle" type="text" value={this.state.filterTitle} onChange={this.handleSearchFilter} />
-                  <input name="filterYear"  type="text" value={this.state.filterYear} onChange={this.handleSearchFilter} />
-                  <input name="filterReso"  type="text" value={this.state.filterReso} onChange={this.handleSearchFilter} />
-               </form>
+        <input
+          name="filterTitle"
+          type="text"
+          value={this.filterTitle}
+          onChange={(e) => this.handleSearchFilter(e, "filterTitle")}
+        />
+        <input
+          name="filterYear"
+          type="text"
+          value={this.filterYear}
+          onChange={(e) => this.handleSearchFilter(e, "filterYear")}
+        />
+        <input
+          name="filterReso"
+          type="text"
+          value={this.filterReso}
+          onChange={(e) => this.handleSearchFilter(e, "filterReso")}
+        />
+      </form>
     }
     
     filterList = () => {
-        const {items, updatedItems, filterTitle, filterYear, filterReso} = this.state;
+        // const {items, updatedItems, filterTitle, filterYear, filterReso} = this.state;
         const itemsUpdate = this.state.items.filter(item => {
-            var filterTitle = item.titulo.toLowerCase().indexOf(filterTitle.toLowerCase()) > 1;
-            var filterYear = item.ano.toLowerCase().indexOf(filterYear.toLowerCase()) > 1;
-            var filterReso = item.reso.toLowerCase().indexOf(filterReso.toLowerCase()) > 1;
+            var filterTitle = item.titulo.toLowerCase().indexOf(this.state.filterTitle.toLowerCase()) > -1;
+            var filterYear = item.ano.toLowerCase().indexOf(this.state.filterYear.toLowerCase()) > -1;
+            var filterReso = item.reso.toLowerCase().indexOf(this.state.filterReso.toLowerCase()) > -1;
             return filterTitle && filterYear && filterReso;
         })
         this.setState({ updatedItems: itemsUpdate }, () => {
